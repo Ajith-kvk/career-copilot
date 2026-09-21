@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 
 class JDInput(BaseModel):
@@ -33,3 +33,9 @@ class ParsedJD(BaseModel):
         default_factory=list,
         description="Domain words a recruiter or ATS would scan for",
     )
+    @field_validator("company", "seniority", "years_experience")
+    @classmethod
+    def blank_to_none(cls, v):
+        if v is not None and not v.strip():
+            return None
+        return v
