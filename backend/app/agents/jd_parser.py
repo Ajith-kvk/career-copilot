@@ -7,7 +7,7 @@ PROMPT = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You are an expert technical recruiter. Extract structured data from "
+                        "You are an expert technical recruiter. Extract structured data from "
             "the job description. Use ONLY information present in the text. "
             "If something is not mentioned, leave it empty. Normalize skill "
             "names (e.g. 'Postgres' -> 'PostgreSQL') and keep each skill short, "
