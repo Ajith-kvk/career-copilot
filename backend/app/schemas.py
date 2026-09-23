@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field, field_validator, model_validator
+from typing import Literal
 
 
 class JDInput(BaseModel):
@@ -39,3 +40,27 @@ class ParsedJD(BaseModel):
         if v is not None and not v.strip():
             return None
         return v
+
+class SkillMatch(BaseModel):
+    skill: str
+    status: Literal["strong", "partial", "missing"]
+    evidence: str = Field(
+        default="",
+        description="Short pointer to the resume evidence; empty if missing",
+    )
+
+
+class SkillAssessment(BaseModel):
+    """What the LLM returns."""
+    matches: list[SkillMatch]
+    advice: list[str] = Field(
+        default_factory=list,
+        description="Concrete steps to close the biggest gaps",
+    )
+
+class FitReport(BaseModel):
+    """What our API returns."""
+    score: int
+    matches: list[SkillMatch]
+    gaps: list[str]
+    advice: list[str]

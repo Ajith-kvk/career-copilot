@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.routers import jd
 
+from app.routers import jd, resume
+
 app = FastAPI(title="Career Copilot API")
 
 app.add_middleware(
@@ -14,6 +16,7 @@ app.add_middleware(
 )
 
 app.include_router(jd.router)
+app.include_router(resume.router)
 
 
 @app.get("/health")
