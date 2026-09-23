@@ -57,3 +57,10 @@ class SkillAssessment(BaseModel):
         default_factory=list,
         description="Concrete steps to close the biggest gaps",
     )
+
+class FitReport(BaseModel):
+    """What our API returns."""
+    score: int
+    matches: list[SkillMatch]
+    gaps: list[str]
+    advice: list[str]
