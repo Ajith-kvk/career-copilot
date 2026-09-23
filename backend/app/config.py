@@ -8,5 +8,7 @@ class Settings(BaseSettings):
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
+    chroma_path: str = "./chroma_data"
+
 
 settings = Settings()
