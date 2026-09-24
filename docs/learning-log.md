@@ -14,3 +14,8 @@
 - Built: ChromaDB resume store, /resume API, fit scorer agent, deterministic scoring with tests
 - Confused me: git add -p can't split adjacent added lines into separate hunks
 - Tell a friend: RAG always returns the closest match even if nothing is truly relevant, so the LLM has to judge whether retrieved evidence actually proves a skill, not just trust that a result came back
+
+## Day 4
+- Built: tailoring agent, LangGraph pipeline with conditional routing, /analyze endpoint
+- Confused me: HEAD@{1} needs quotes in PowerShell; squash merge vs regular merge look different in the log
+- Tell a friend: a guardrail against "never invent facts" doesn't stop the model from spinning true facts into a stretched, more persuasive argument, that's a different problem
