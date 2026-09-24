@@ -9,3 +9,8 @@
 - Built: Groq config, JD parser agent, /jd/parse endpoint
 - Confused me:
 - Tell a friend: why a schema beats "reply in JSON", and why code must enforce what prompts only request
+
+## Day 3
+- Built: ChromaDB resume store, /resume API, fit scorer agent, deterministic scoring with tests
+- Confused me: git add -p can't split adjacent added lines into separate hunks
+- Tell a friend: RAG always returns the closest match even if nothing is truly relevant, so the LLM has to judge whether retrieved evidence actually proves a skill, not just trust that a result came back
