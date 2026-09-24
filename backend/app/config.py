@@ -10,5 +10,7 @@ class Settings(BaseSettings):
 
     chroma_path: str = "./chroma_data"
 
+    min_fit_to_tailor: int = 20
+
 
 settings = Settings()
