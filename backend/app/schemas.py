@@ -75,3 +75,14 @@ class TailoredOutput(BaseModel):
     summary: str = Field(description="3-4 sentence resume summary for this role")
     bullet_rewrites: list[BulletRewrite] = Field(default_factory=list)
     cover_letter: str
+
+class AnalyzeRequest(JDInput):
+    candidate_name: str = "Candidate"
+    force: bool = False
+
+
+class AnalyzeResponse(BaseModel):
+    parsed_jd: ParsedJD
+    fit: FitReport
+    tailored: TailoredOutput | None = None
+    application_id: int | None = None
